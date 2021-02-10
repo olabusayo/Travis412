@@ -29,4 +29,16 @@ public class SimpleCalculatorTest {
 		SimpleCalculator calc = new SimpleCalculator();
 		assertEquals(calc.div(9, 3), 3);
 	}
+
+	@Test (expected = ArithmeticException.class)
+	public void testDivideDivideByZero() {
+		SimpleCalculator calc = new SimpleCalculator();
+		calc.div(9, 0);
+	}
+
+	@Test
+	public void testDivideFloatingPoint() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.div(10, 3), 3);
+	}
 }
